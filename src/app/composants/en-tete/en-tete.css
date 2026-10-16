@@ -1,0 +1,35 @@
+.entete-contenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo-catalogue {
+  flex: 0 0 auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0.55rem;
+  color: #fff;
+  background: rgb(255 255 255 / 14%);
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 16px;
+}
+
+.entete-contenu h1 {
+  max-width: none;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+}
+
+@media (max-width: 520px) {
+  .entete-contenu {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .entete-contenu h1 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,18 @@
+.contenu-principal {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+app-liste-cours,
+app-details-cours {
+  display: block;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .contenu-principal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

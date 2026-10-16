@@ -1,1 +1,216 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  color-scheme: light;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1e293b;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top left, rgb(219 234 254 / 55%), transparent 38rem),
+    #f4f7fb;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+app-root {
+  display: block;
+}
+
+app-en-tete header {
+  padding: 2.75rem 1.5rem 2.25rem;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(120deg, #172554, #1d4ed8 65%, #4f46e5);
+  box-shadow: 0 12px 32px rgb(30 64 175 / 18%);
+}
+
+app-en-tete h1 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: inherit;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.contenu-principal {
+  width: min(1180px, calc(100% - 3rem));
+  margin: 2.5rem auto 3rem;
+}
+
+.controles {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.controles input,
+.controles select {
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  color: #1e293b;
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 4%);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.controles input {
+  flex: 1;
+  min-width: 0;
+}
+
+.controles input::placeholder {
+  color: #94a3b8;
+}
+
+.controles input:focus,
+.controles select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgb(59 130 246 / 14%);
+}
+
+.liste-cours {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.carte-cours,
+.details-cours {
+  padding: 1.25rem 1.4rem;
+  background: rgb(255 255 255 / 92%);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgb(15 23 42 / 5%);
+}
+
+.carte-cours {
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.carte-cours:hover {
+  transform: translateY(-2px);
+  border-color: #bfdbfe;
+  box-shadow: 0 14px 28px rgb(15 23 42 / 9%);
+}
+
+.carte-cours.actif {
+  background: #eff6ff;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 8px 24px rgb(37 99 235 / 12%);
+}
+
+.carte-cours h2,
+.details-cours h2 {
+  margin: 0 0 0.75rem;
+  color: #172554;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.carte-cours p,
+.details-cours p {
+  margin: 0.55rem 0 0;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  color: #1d4ed8;
+  background: #dbeafe;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.045em;
+}
+
+.badge--backend {
+  color: #7c3aed;
+  background: #ede9fe;
+}
+
+.badge--langage {
+  color: #047857;
+  background: #d1fae5;
+}
+
+.badge--autre {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.liste-vide {
+  padding: 1.5rem;
+  color: #64748b;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+}
+
+app-details-cours {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.details-cours {
+  min-height: 160px;
+}
+
+app-pied-page footer {
+  padding: 1.5rem;
+  color: #94a3b8;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+app-pied-page footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .contenu-principal {
+    width: min(100% - 2rem, 560px);
+    margin-top: 1.5rem;
+  }
+
+  .controles {
+    flex-direction: column;
+  }
+
+  app-details-cours {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
